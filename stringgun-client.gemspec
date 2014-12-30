@@ -1,6 +1,6 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require File.expand_path('../lib/version', __FILE__)
+require File.expand_path('../lib/stringgun-client/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "stringgun-client"
