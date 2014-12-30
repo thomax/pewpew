@@ -1,4 +1,4 @@
 source "http://rubygems.org"
 
-# Specify your gem's dependencies in stringgun.gemspec
+# gem's dependencies in stringgun-client.gemspec
 gemspec

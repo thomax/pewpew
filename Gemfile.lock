@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stringgun (0.0.1)
+    stringgun-client (0.0.1)
       httparty
 
 GEM
@@ -31,4 +31,4 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  stringgun!
+  stringgun-client!

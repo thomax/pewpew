@@ -3,7 +3,7 @@ $:.push File.expand_path("../lib", __FILE__)
 require File.expand_path('../lib/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name        = "stringgun"
+  s.name        = "stringgun-client"
   s.version     = Stringgun::VERSION
   s.authors     = ["Thomas Drevon"]
   s.email       = ["thomas@drevon.no"]
@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Ruby client for stringgun.io}
   s.description = %q{Ruby client for stringgun.io}
 
-  s.rubyforge_project = "stringgun"
+  s.rubyforge_project = "stringgun-client"
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]
