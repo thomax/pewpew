@@ -1,5 +1,4 @@
 # encoding: utf-8
-
 require 'httparty'
 
 module Stringgun
@@ -9,7 +8,7 @@ module Stringgun
     DEFAULT_HOST = 'http://stringgun.io'
 
     def self.aquire_target(options = {})
-      self.new(options)
+      Client.new(options)
     end
 
 
@@ -18,7 +17,7 @@ module Stringgun
       @stringgun_host = options[:stringgun_host] || DEFAULT_HOST
       if options[:get_url] && options[:post_url]
         @get_url = options[:get_url]
-        @post_url = options[:post_url])
+        @post_url = options[:post_url]
       else
         init_from_scratch
       end
@@ -26,16 +25,14 @@ module Stringgun
     end
 
 
-    alias_method :inspect_target, :get
     def get
       response = HTTParty.get(get_url)
       JSON.parse(response.body)
     end
 
 
-    alias_method :fire, :post
     def post(string)
-      response = HTTParty.post(post_url, :body => {:string => string})
+      response = HTTParty.post(post_url, body: {string: string})
       JSON.parse(response.body)
     end
 
@@ -43,6 +40,10 @@ module Stringgun
     def urls
       {get_url: get_url, post_url: post_url}
     end
+
+    # analogies, schmanalogies
+    alias_method :inspect_target, :get
+    alias_method :fire, :post
 
 
     private
