@@ -1,5 +1,5 @@
 pewpew
-================
+======
 
 Ruby client for stringgun.io
 
