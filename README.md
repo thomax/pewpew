@@ -1,17 +1,17 @@
-stringgun-client
+pewpew
 ================
 
 Ruby client for stringgun.io
 
 ## Up and running
 
-```gem install stringgun-client```
+```gem install pewpew```
 
 
 ## Usage
 
 ```
-  require 'stringgun-client'
+  require 'pewpew'
 
   stringgun = Stringgun::Client.aquire_target
   stringgun.fire 'Go out in the'
