@@ -14,9 +14,9 @@ Ruby client for stringgun.io
   require 'stringgun-client'
 
   stringgun = Stringgun::Client.aquire_target
-  stringun.fire 'Go out in the'
-  stringun.fire 'meadow hills are'
-  stringun.fire 'a-green sing me a'
-  stringun.fire 'rainbow steal med a dream'
-  stringun.inspect_target
+  stringgun.fire 'Go out in the'
+  stringgun.fire 'meadow hills are'
+  stringgun.fire 'a-green sing me a'
+  stringgun.fire 'rainbow steal med a dream'
+  stringgun.inspect_target
 ```

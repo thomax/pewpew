@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'httparty'
+require './lib/stringgun-client/http'
 
 module Stringgun
 
@@ -12,28 +12,25 @@ module Stringgun
     end
 
 
-    attr_reader :target, :token, :stringgun_host
+    attr_reader :get_url, :post_url
     def initialize(options = {})
-      @stringgun_host = options[:stringgun_host] || DEFAULT_HOST
       if options[:get_url] && options[:post_url]
         @get_url = options[:get_url]
         @post_url = options[:post_url]
       else
-        init_from_scratch
+        init_from_scratch(options[:stringgun_host] || DEFAULT_HOST)
       end
       self.urls
     end
 
 
     def get
-      response = HTTParty.get(get_url)
-      JSON.parse(response.body)
+      HTTP.get(get_url)
     end
 
 
     def post(string)
-      response = HTTParty.post(post_url, body: {string: string})
-      JSON.parse(response.body)
+      HTTP.post(post_url, string)
     end
 
 
@@ -41,22 +38,22 @@ module Stringgun
       {get_url: get_url, post_url: post_url}
     end
 
-    # analogies, schmanalogies
+    # analogies schmanalogies
     alias_method :inspect_target, :get
     alias_method :fire, :post
 
 
     private
 
-    def init_from_scratch
-      response = HTTParty.post("#{stringgun_host}/new")
-      unless response.code == 201
-        message = "Unexpected response from #{stringgun_host}: #{response}"
-        raise RuntimeError.new(message)
+    def init_from_scratch(stringgun_host)
+      result = begin
+        HTTP.post("#{stringgun_host}/new")
+      rescue => e
+        # TODO: handle whatever comes this way
+        raise e
       end
-      result_hash = JSON.parse(response.body)
-      @get_url = result_hash['get_url']
-      @post_url = result_hash['post_url']
+      @get_url = result['get_url']
+      @post_url = result['post_url']
     end
 
   end

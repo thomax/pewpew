@@ -1,6 +1,7 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require File.expand_path('../lib/stringgun-client/version', __FILE__)
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'stringgun-client/version'
 
 Gem::Specification.new do |s|
   s.name        = "stringgun-client"
@@ -17,5 +18,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency "rspec"
-  s.add_runtime_dependency "httparty"
+  s.add_development_dependency "bundler", "~> 1.7"
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_runtime_dependency "rest_client", "~> 1.8.2"
 end
