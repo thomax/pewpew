@@ -1,5 +1,4 @@
 # encoding: utf-8
-require './lib/stringgun-client/http'
 
 module Stringgun
 

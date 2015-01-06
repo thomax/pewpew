@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'stringgun-client/version'
+require 'pewpew/version'
 
 Gem::Specification.new do |s|
-  s.name        = "stringgun-client"
+  s.name        = "pewpew"
   s.version     = Stringgun::VERSION
   s.authors     = ["Thomas Drevon"]
   s.email       = ["thomas@drevon.no"]
@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = %q{Ruby client for stringgun.io}
   s.description = %q{Ruby client for stringgun.io}
 
-  s.rubyforge_project = "stringgun-client"
+  s.rubyforge_project = "pewpew"
 
   s.files         = `git ls-files`.split("\n")
   s.require_paths = ["lib"]

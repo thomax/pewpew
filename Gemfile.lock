@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stringgun-client (0.0.1)
+    pewpew (0.0.1)
       rest_client (~> 1.8.2)
 
 GEM
@@ -30,6 +30,6 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.7)
+  pewpew!
   rake (~> 10.0)
   rspec
-  stringgun-client!
