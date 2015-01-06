@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+# Wraps the chores of starting and using a stringgun.io session
 module Stringgun
 
   class Client
@@ -51,8 +52,8 @@ module Stringgun
         # TODO: handle whatever comes this way
         raise e
       end
-      @get_url = result['get_url']
-      @post_url = result['post_url']
+      @get_url = result['getUrl']
+      @post_url = result['postUrl']
     end
 
   end
